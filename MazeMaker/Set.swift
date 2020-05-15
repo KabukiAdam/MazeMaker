@@ -1,5 +1,5 @@
 extension Set {
-  public func sample() -> Set.Element? {
+  func sample() -> Set.Element? {
     if count > 0 {
         let offset = Int(arc4random()) % count
     

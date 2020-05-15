@@ -1,5 +1,5 @@
 extension Array {
-  public func sample() -> Array.Element? {
+  func sample() -> Array.Element? {
     if count > 0 {
       let offset = Int(arc4random()) % count
       return self[offset]
@@ -8,7 +8,7 @@ extension Array {
     }
   }
 
-  public func shuffle() -> Array {
+  func shuffle() -> Array {
     var copy = self
 
     for i in 0..<copy.count {

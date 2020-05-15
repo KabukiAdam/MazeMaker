@@ -1,14 +1,14 @@
-open class PolarCell: Cell {
-  open var polarLocation: PolarLocation {
+class PolarCell: Cell {
+  var polarLocation: PolarLocation {
     return location as! PolarLocation
   }
 
-  open var outward: Array<PolarCell> = []
-  open var inward: PolarCell? = nil
-  open var cw: PolarCell? = nil
-  open var ccw: PolarCell? = nil
+  var outward: Array<PolarCell> = []
+  var inward: PolarCell? = nil
+  var cw: PolarCell? = nil
+  var ccw: PolarCell? = nil
 
-  open override var neighbors: Set<Cell> {
+  override var neighbors: Set<Cell> {
     var neighbors: Set<Cell> = Set(outward)
     if let inward = inward { neighbors.insert(inward) }
     if let cw = cw { neighbors.insert(cw) }
@@ -16,7 +16,7 @@ open class PolarCell: Cell {
     return neighbors
   }
 
-  public override init(location: Location) {
+  override init(location: Location) {
     super.init(location: location)
   }
 }

@@ -14,6 +14,6 @@ FOUNDATION_EXPORT double MazeMakerVersionNumber;
 //! Project version string for MazeMaker.
 FOUNDATION_EXPORT const unsigned char MazeMakerVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <MazeMaker/PublicHeader.h>
+// In this header, you should import all the headers of your framework using statements like #import <MazeMaker/PublicHeader.h>
 
 

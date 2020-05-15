@@ -1,22 +1,22 @@
-open class OrthogonalLayout: Layout {
-  open let rows: Int
-  open let columns: Int
-  open let wrapRows: Bool
-  open let wrapColumns: Bool
+class OrthogonalLayout: Layout {
+  let rows: Int
+  let columns: Int
+  let wrapRows: Bool
+  let wrapColumns: Bool
 
-  public init(rows: Int, columns: Int, wrapRows: Bool = false, wrapColumns: Bool = false) {
+  init(rows: Int, columns: Int, wrapRows: Bool = false, wrapColumns: Bool = false) {
     self.rows = rows
     self.columns = columns
     self.wrapRows = wrapRows
     self.wrapColumns = wrapColumns
   }
 
-  open func build(_ grid: Grid) {
+  func build(_ grid: Grid) {
     for row in 0..<rows {
       for column in 0..<columns {
         let location = GridLocation(row: row, column: column)
         let cell = OrthogonalCell(location: location)
-        grid.add(cell)
+        let _ = grid.add(cell)
 
         let north = GridLocation(row: row-1, column: column)
         if let north = grid.at(north) as? OrthogonalCell {
@@ -47,7 +47,7 @@ open class OrthogonalLayout: Layout {
     }
   }
 
-  open func renderAsString(_ grid: Grid) -> String {
+  func renderAsString(_ grid: Grid) -> String {
     var string = ""
 
     for _ in 0..<columns {

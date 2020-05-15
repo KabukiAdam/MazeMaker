@@ -1,18 +1,18 @@
-open class Distances {
-  open let root: Cell
+class Distances {
+  let root: Cell
   fileprivate var distances: [Cell: Int] = [:]
 
-  fileprivate(set) open var farthestCell: Cell
-  fileprivate(set) open var farthestDistance: Int
+  fileprivate(set) var farthestCell: Cell
+  fileprivate(set) var farthestDistance: Int
 
-  public init(root: Cell) {
+  init(root: Cell) {
     self.root = root
     distances[root] = 0
     farthestCell = root
     farthestDistance = 0
   }
 
-  open subscript(element: Cell) -> Int? {
+  subscript(element: Cell) -> Int? {
     get {
       return distances[element]
     }
@@ -27,7 +27,7 @@ open class Distances {
     }
   }
 
-  open func shortestPathToCell(_ cell: Cell) -> [Cell] {
+  func shortestPathToCell(_ cell: Cell) -> [Cell] {
     var current = cell
     var path = [cell]
 
